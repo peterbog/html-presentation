@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>HTML for not-so-smart-ppl</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/night.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -20,12 +20,353 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style type="text/css">
+			code {
+				color: #FFBFAF;
+			}
+			.reveal pre {
+				font-size: 0.9em;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>HTML</h1>
+					<h3>for not-so-smart-ppl</h3>
+				</section>
+
+				<section>
+					<h3>Elementer af en hjemmeside</h3>
+					<ul>
+						<li>HTML - HyperText Markup Language<br />
+							<small>Strukturering af indhold</small>
+						</li>
+						<li>CSS - Cascading StyleSheets<br />
+							<small>Styling af indhold</small>
+						</li>
+						<li>JavaScript<br />
+							<small>Interaktion med indhold</small>
+						</li>
+						<li>Andre ressourcer<br />
+							<small>billede, videoer, fonte, ...</small></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Syntaks & Semantik</h2>
+				</section>
+
+				<section>
+					<section>
+						<h2>Syntaks</h2>
+						<p>Hvordan det skal skrives</p>
+					</section>
+					
+					<section>
+						<h2>Et HTML element</h2>
+						<h3>
+							<code><span class="fragment highlight-blue" data-fragment-index="1">&lt;a href="http://disney.com"&gt;</span><span class="fragment highlight-green" data-fragment-index="2">Et link</span><span class="fragment highlight-red" data-fragment-index="3">&lt;/a&gt;</span></code>
+						</h3>
+						<ul>
+							<li class="fragment" data-fragment-index="1" style="color: #1b91ff;">Start tag</li>
+							<li class="fragment" data-fragment-index="2" style="color: #17ff2e;">Krop</li>
+							<li class="fragment" data-fragment-index="3" style="color: #ff2c2d;">Slut tag</li>
+						</ul>
+					</section>
+
+					<section>
+						<code><small><span style="color: #1b91ff;">&lt;a href="http://disney.com"&gt;</span>Et link&lt;/a&gt;</small></code>
+						<h2>Et start tag</h2>
+						<h3>
+							<code><span class="fragment highlight-blue" data-fragment-index="1">&lt;</span><span class="fragment highlight-green" data-fragment-index="2">a</span><span class="fragment highlight-red" data-fragment-index="3"> href="http://disney.com"</span><span class="fragment highlight-blue" data-fragment-index="1">&gt;</span></code>
+						</h3>
+						<ul>
+							<li class="fragment" data-fragment-index="1" style="color: #1b91ff;"><code>&lt;</code> og <code>&gt;</code> (mindre end og større end)</li>
+							<li class="fragment" data-fragment-index="2" style="color: #17ff2e;">Navn</li>
+							<li class="fragment" data-fragment-index="3" style="color: #ff2c2d;">Attributter</li>
+						</ul>
+					</section>
+
+					<section>
+						<code><small><span style="color: #1b91ff;">&lt;a href="http://disney.com"&gt;</span>Et link&lt;/a&gt;</small></code>
+						<h2>Attributter</h2>
+						<h3>
+							<code><span class="fragment highlight-blue" data-fragment-index="1">href</span><span class="fragment highlight-green" data-fragment-index="2">=</span><span class="fragment highlight-red" data-fragment-index="3">"http://disney.com"</span></code>
+						</h3>
+						<ul>
+							<li class="fragment" data-fragment-index="1" style="color: #1b91ff;">Navn</li>
+							<li class="fragment" data-fragment-index="2" style="color: #17ff2e;"><code>=</code> (lig med)</li>
+							<li class="fragment" data-fragment-index="3" style="color: #ff2c2d;">Værdi, omkranset af <code>&quot;</code> (gåseøjne)</li>
+							<li class="fragment" data-fragment-index="4"><code>=</code> og værdi kan unlades ved nogen attributter<br />fx <code>checked</code></li>
+						</ul>
+					</section>
+
+					<section>
+						<code><small>&lt;a href="http://disney.com"&gt;Et link<span style="color: #ff2c2d;">&lt;/a&gt;</span></small></code>
+						<h2>Slut tag</h2>
+						<h3>
+							<code><span class="fragment highlight-blue" data-fragment-index="1">&lt;</span><span class="fragment highlight-green" data-fragment-index="2">/</span><span class="fragment highlight-red" data-fragment-index="3">a</span><span class="fragment highlight-blue" data-fragment-index="1">&gt;</span></code>
+						</h3>
+						<ul>
+							<li class="fragment" data-fragment-index="1" style="color: #1b91ff;"><code>&lt;</code> og <code>&gt;</code> (mindre end og større end)</li>
+							<li class="fragment" data-fragment-index="2" style="color: #17ff2e;"><code>/</code> (skråstreg)</li>
+							<li class="fragment" data-fragment-index="3" style="color: #ff2c2d;">Navn</li>
+							<li class="fragment" data-fragment-index="4">
+								Nogen elementer har ikke en krop og behøver derfor ikke slut tag<br />
+								I de situationer kan start tagget slutte med <code>/</code> (skråstreg)<br />
+								fx <code>&lt;input type=&quot;checkbox&quot; /&gt;</code>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<code><small>&lt;a href="http://disney.com"&gt;<span style="color: #17ff2e;">Et link</span>&lt;/a&gt;</small></code>
+						<h2>Krop</h2>
+						<p>En krop kan bestå af tekst og andre HTML elementer</p>
+						<code>Et &lt;strong&gt;fedt&lt;/strong&gt; link</code>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Specialtegn</h2>
+					Alle <code>&lt;</code> bliver opfattet som starten på et tag.<br />
+					Specialtegn kan skrives med <code>&xx;</code>
+					<table>
+						<tr>
+							<td><code>&lt;</code></td>
+							<td><code>&amp;lt;</code></td>
+						</tr>
+						<tr>
+							<td><code>&gt;</code></td>
+							<td><code>&amp;gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>&quot;</code></td>
+							<td><code>&amp;quot;</code></td>
+						</tr>
+						<tr>
+							<td><code>&amp;</code></td>
+							<td><code>&amp;amp;</code></td>
+						</tr>
+					</table>
+				</section>
+				
+				<section>
+					<h2>Whitespace</h2>
+					<p>Mellemrum og linjeskift ignoreres næsten.</p>
+					<p>En række whitespace smeltes sammen til <em>ét</em> mellemrum.</p>
+				</section>
+				
+				<section>
+					<h2>HTML dokument</h2>
+					<pre><code data-trim data-noescape>
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Hello title!&lt;/title&gt;
+		&lt;link rel="stylesheet" href="/styles/style.css" /&gt;
+		&lt;script src="/scripts/script.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		Hello world!
+	&lt;/body&gt;
+&lt;/html&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>Semantik</h2>
+						<p>Hvad det betyder</p>
+					</section>
+
+					<section>
+						<h2>Block og inline</h2>
+						<p style="border: 2px solid green; background-color: #000F03; padding: 4px;">
+							Dette er et block element.<br />
+							Men her kommer et par <span style="border: 2px solid red; background-color: #0F0300; padding: 0 8px;">inline elementer</span> og <span style="border: 2px solid red; background-color: #0F0300; padding: 0 8px;">blander</span> sig.
+						</p>
+						<p style="border: 2px solid green; background-color: #000F03; padding: 4px;">
+							Et andet block element
+						</p>
+						<p>
+							Vha <code>float</code> i CSS kan man få et element til &quot;svæve&quot; til højre eller venstre
+						</p>
+					</section>
+
+					<section>
+						<h2>Link</h2>
+						<pre><code data-trim data-noescape>
+&lt;a href="http://disney.com"&gt;Et link&lt;/a&gt;
+						</code></pre>
+						
+						<a href="http://combine.dk">Et link</a>
+					</section>
+
+					<section>
+						<h2>Overskrifter</h2>
+						<pre><code data-trim data-noescape>
+&lt;h1&gt;Overskrift 1&lt;/h1&gt;
+&lt;h2&gt;Overskrift 2&lt;/h2&gt;
+&lt;h3&gt;Overskrift 3&lt;/h3&gt;
+&lt;h4&gt;Overskrift 4&lt;/h4&gt;
+&lt;h5&gt;Overskrift 5&lt;/h5&gt;
+&lt;h6&gt;Overskrift 6&lt;/h6&gt;
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Tekst</h2>
+						<pre><code data-trim data-noescape>
+&lt;p&gt;En paragraf&lt;/p&gt;
+&lt;strong&gt;En fed tekst&lt;/strong&gt;
+&lt;em&gt;En kursiv tekst&lt;/em&gt;
+Et&lt;br /&gt;linjeskift
+						</code></pre>
+						
+						<p>En paragraf</p>
+						<p><strong>En fed tekst</strong></p>
+						<em>En kursiv tekst</em></p>
+						<p>Et<br />linjeskift</p>
+					</section>
+
+					<section>
+						<h2>Billede</h2>
+						<pre><code data-trim data-noescape>
+&lt;img src="/image.jpg" alt="Et billede" /&gt;
+						</code></pre>
+						
+						<img src="/image.jpg" alt="Et billede" style="width: 250px;" />
+					</section>
+					
+					<section>
+						<h2>Lister</h2>
+						<pre><code data-trim data-noescape>
+&lt;ul&gt;
+	&lt;li&gt;Et punkt&lt;/li&gt;
+	&lt;li&gt;Et andet punkt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+	&lt;li&gt;Det første punkt&lt;/li&gt;
+	&lt;li&gt;Punkt nummer to&lt;/li&gt;
+&lt;/ol&gt;
+						</code></pre>
+						
+						<p>
+							<ul>
+								<li>Et punkt</li>
+								<li>Et andet punkt</li>
+							</ul>
+						</p>
+						<p>
+							<ol>
+								<li>Det første punkt</li>
+								<li>Punkt nummer to</li>
+							</ol>
+						</p>
+					</section>
+					
+					<section>
+						<h2>Tabel</h2>
+						<pre><code data-trim data-noescape>
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;Første kolonne&lt;/th&gt;
+		&lt;th&gt;Anden kolonne&lt;/th&gt;
+		&lt;th&gt;3. kolonne&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Værdi 1&lt;/td&gt;
+		&lt;td&gt;2. værdi&lt;/td&gt;
+		&lt;td&gt;Nummer tre&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+						</code></pre>
+						
+						<table>
+							<tr>
+								<th>Første kolonne</th>
+								<th>Anden kolonne</th>
+								<th>3. kolonne</th>
+							</tr>
+							<tr>
+								<td>Værdi 1</td>
+								<td>2. værdi</td>
+								<td>Nummer tre</td>
+							</tr>
+							<tr>
+								<td>Ichi</td>
+								<td>Ni</td>
+								<td>San</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Form</h2>
+						<pre><code data-trim data-noescape>
+&lt;form action="" method="GET"&gt;
+	&lt;input type="text" name="" value="" /&gt;
+	&lt;input type="checkbox" name="" value="1" checked /&gt;
+	&lt;input type="radio" name="" value="1" checked /&gt;
+	&lt;textarea name=""&gt;&lt;/textarea&gt;
+	&lt;select name=""&gt;
+		&lt;option value="1" selected&gt;Den første&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;button type="submit"&gt;Gem&lt;/button&gt;
+&lt;/form&gt;
+						</code></pre>
+						
+						<form action="" method="GET">
+							<input type="text" name="" value="" />
+							<input type="checkbox" name="" value="1" checked />
+							<input type="radio" name="" value="1" checked />
+							<textarea name=""></textarea>
+							<select name="">
+								<option value="1" selected>Den første</option>
+							</select>
+							<button type="submit">Gem</button>
+						</form>
+					</section>
+
+					<section>
+						<h2>Grupperingselementer</h2>
+						<pre><code data-trim data-noescape>
+&lt;div&gt;Noget indhold&lt;/div&gt;
+&lt;span&gt;Noget andet&lt;/span&gt;
+						</code></pre>
+						<ul>
+							<li><code>div</code> er et block element</li>
+							<li><code>span</code> er et inline element</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Generelle attributter</h2>
+					<ul>
+						<li><code>id=&quot;login_form&quot;</code><br />
+							Til unik identifikation<br />
+							<small>HTML, CSS, JavaScript</small>
+						</li>
+						<li><code>class=&quot;text-success pull-right&quot;</code><br />
+							Til styling classer<br />
+							<small>CSS, JavaScript</small></li>
+						<li><code>style=&quot;width: 200px;&quot;</code><br />
+							Til specifik element styling<br />
+							<small>CSS</small></li>
+						<li><code>onxx=&quot;&quot;</code><br />
+							Til events<br />
+							fx <code>onclick=&quot;form.submit();&quot;</code><br />
+							<small>JavaScript</small></li>
+					</ul>
+				</section>
+				
+				<section>
+					<em>Fin.</em>
+				</section>
 			</div>
 		</div>
 
@@ -35,7 +376,11 @@
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+				width: 1248, /* 1920 */
+				height: 702, /* 1080 */
+				controls: false,
 				history: true,
+				transition: 'convex',
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
